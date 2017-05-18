@@ -1,5 +1,5 @@
-#!/bin/bash
-echo running post install khula test dev spring boot with docker-compose;
-java -jar /khula-dev-spring-boot-test/ayo-dev-test-spring-boot-0.1.0.jar
-while true; do sleep 1000; done
+#Build Image
+docker build -t devtestkhula/v1 .
 
+#Execute Image
+docker run -p 8111:8111 -it devtestkhula/v1  java -jar /usr/src/testdevapp/ayo-dev-test-spring-boot-0.1.0.jar
