@@ -1,0 +1,13 @@
+version: "2"
+services:
+  devtestkhula:
+    image: lwieske/java-8
+    privileged: true
+    volumes:
+    - .target:/khula-dev-spring-boot-test
+    ports:
+      - "8111:8111"
+    #command: ["while true; do sleep 1000; done"]
+    command: nohup java -jar /khula-dev-spring-boot-test/ayo-dev-test-spring-boot-0.1.0.jar
+    #command: ls /khula-dev-spring-boot-test
+    #command: ["java -version"]
